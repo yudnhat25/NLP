@@ -148,13 +148,11 @@ jupyter notebook Chat_bot.ipynb
 
 | Model | Accuracy | F1-Score | Training Time | Inference Speed |
 |-------|----------|----------|---------------|-----------------|
-| Logistic Regression | 77.3% | 0.75 | 45s | ⚡⚡⚡ Fast |
-| SVM | 79.8% | 0.78 | 3m 20s | ⚡⚡ Medium |
-| Random Forest | 81.5% | 0.80 | 5m 15s | ⚡⚡ Medium |
-| XGBoost | 84.2% | 0.82 | 8m 30s | ⚡⚡ Medium |
-| LSTM | 86.7% | 0.85 | 35m | ⚡ Slow |
-| CNN-LSTM | 87.9% | 0.86 | 42m | ⚡ Slow |
-| **PhoBERT** | **90.4%** | **0.89** | 1h 45m | ⚡ Slow |
+| **PhoBERT** | **69.0%** | **0.70** | ~20m | ⚡ Slow |
+| Logistic Regression | 62.6% | 0.63 | 45s | ⚡⚡⚡ Fast |
+| Linear SVM | 60.7% | 0.61 | 3m 20s | ⚡⚡ Medium |
+| Naive Bayes | 60.1% | 0.60 | 45s | ⚡⚡⚡ Fast |
+| BiLSTM | 60.0% | 0.60 | 35m | ⚡ Slow |
 
 ### Confusion Matrix (PhoBERT)
 

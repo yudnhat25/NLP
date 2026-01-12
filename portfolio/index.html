@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vietnamese Stock Market Sentiment Analysis - Project Portfolio</title>
+    <meta name="description"
+        content="Dự án phân tích cảm xúc thị trường chứng khoán Việt Nam sử dụng AI và Machine Learning">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">📊</span>
+                <span class="logo-text">Stock Sentiment AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#overview" class="nav-link">Tổng Quan</a></li>
+                <li><a href="#workflow" class="nav-link">Quy Trình</a></li>
+                <li><a href="#results" class="nav-link">Kết Quả</a></li>
+                <li><a href="#tech" class="nav-link">Công Nghệ</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+            </ul>
+            <button class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="overview">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">🤖</span>
+                    <span>AI-Powered Sentiment Analysis</span>
+                </div>
+                <h1 class="hero-title">
+                    Phân Tích Cảm Xúc<br>
+                    <span class="gradient-text">Thị Trường Chứng Khoán</span><br>
+                    Việt Nam
+                </h1>
+                <p class="hero-subtitle">
+                    Hệ thống phân tích sentiment từ bình luận chứng khoán sử dụng<br>
+                    Machine Learning, Deep Learning và PhoBERT
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">69%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2,500+</div>
+                        <div class="stat-label">Labeled Data</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">ML/DL Models</div>
+                    </div>
+                </div>
+                <div class="hero-actions">
+                    <a href="#workflow" class="btn btn-primary">
+                        <span>Xem Quy Trình</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="#demo" class="btn btn-secondary">
+                        <span>Thử Demo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+    </section>
+
+    <!-- Project Overview -->
+    <section class="section overview-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📋 Giới Thiệu</span>
+                <h2 class="section-title">Tổng Quan Dự Án</h2>
+                <p class="section-subtitle">
+                    Xây dựng hệ thống hoàn chỉnh từ thu thập dữ liệu đến triển khai ứng dụng
+                </p>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Mục Tiêu</h3>
+                    <p>Phân tích cảm xúc từ bình luận về chứng khoán để dự đoán xu hướng thị trường và hỗ trợ quyết định
+                        đầu tư</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Dữ Liệu</h3>
+                    <p>2,918 bình luận thực tế từ CafeF, VnExpress, StockBiz về cổ phiếu VIC, được gán nhãn bằng Gemini
+                        AI</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Phương Pháp</h3>
+                    <p>So sánh 6+ models: Logistic Regression, SVM, XGBoost, LSTM, CNN-LSTM, PhoBERT để chọn model tốt
+                        nhất</p>
+                </div>
+                <div class="overview-card">
+                    <div class="card-icon">💬</div>
+                    <h3>Ứng Dụng</h3>
+                    <p>Chatbot phân tích sentiment real-time với giao diện thân thiện, hỗ trợ batch analysis và
+                        visualizations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section class="section workflow-section" id="workflow">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🔄 Quy Trình</span>
+                <h2 class="section-title">Pipeline Thực Hiện</h2>
+                <p class="section-subtitle">
+                    6 bước từ dữ liệu thô đến ứng dụng hoàn chỉnh
+                </p>
+            </div>
+            <div class="workflow-timeline">
+                <!-- Step 1 -->
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">1</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 1</div>
+                        <h3>Data Labeling & Cleaning</h3>
+                        <p class="timeline-description">
+                            Sử dụng Gemini AI (gemma-3-27b-it) để tự động gán nhãn sentiment và aspect.
+                            Lọc bỏ spam, tục tĩu, nội dung không liên quan.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>CheckData.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Input:</span>
+                                <code>Data.json (3.4MB)</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Output:</span>
+                                <code>Data_T9_Labeled_Final.json</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~30 phút</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Gemini AI</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">JSON</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">2</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 2</div>
+                        <h3>Exploratory Data Analysis</h3>
+                        <p class="timeline-description">
+                            Phân tích sâu về phân bố sentiment, aspect, độ dài văn bản.
+                            Tạo visualizations: word cloud, timeline, correlation với giá cổ phiếu.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>EDA_Data.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Insights:</span>
+                                <span>42% Tích cực, 36% Bình thường, 22% Tiêu cực</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~15 phút</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                            <span class="tech-tag">WordCloud</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">3</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 3</div>
+                        <h3>Machine Learning Models</h3>
+                        <p class="timeline-description">
+                            Train và so sánh các ML models cổ điển với TF-IDF features.
+                            Logistic Regression đạt ~63% accuracy, hiệu suất tốt nhất.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>MachineLearningModel.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Models:</span>
+                                <span>LR, SVM, RF, Naive Bayes</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Best:</span>
+                                <span class="accuracy-badge">LogReg - 63%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~20 phút</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">LogisticRegression</span>
+                            <span class="tech-tag">TF-IDF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">4</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 4</div>
+                        <h3>Deep Learning Models</h3>
+                        <p class="timeline-description">
+                            Xây dựng các kiến trúc DL: BiLSTM, LSTM với Word2Vec embeddings.
+                            BiLSTM đạt ~60% accuracy.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>DeepLearningModel.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Architectures:</span>
+                                <span>BiLSTM, LSTM</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Best:</span>
+                                <span class="accuracy-badge">BiLSTM - 60%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~1 giờ</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Keras</span>
+                            <span class="tech-tag">Word2Vec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="timeline-item" data-step="5">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">5</div>
+                        <div class="marker-line"></div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 5</div>
+                        <h3>PhoBERT Fine-tuning</h3>
+                        <p class="timeline-description">
+                            Fine-tune PhoBERT (vinai/phobert-base) - pre-trained Vietnamese BERT.
+                            Đạt 69% accuracy, hiệu suất cao nhất hiện tại.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>PhoBertModel.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Model:</span>
+                                <span>vinai/phobert-base</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Best:</span>
+                                <span class="accuracy-badge best">PhoBERT - 69%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~2 giờ</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Transformers</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">PhoBERT</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="timeline-item" data-step="6">
+                    <div class="timeline-marker">
+                        <div class="marker-icon">6</div>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-badge">Bước 6</div>
+                        <h3>Chatbot Application</h3>
+                        <p class="timeline-description">
+                            Triển khai chatbot với Gradio/Streamlit.
+                            Hỗ trợ dự đoán real-time, batch analysis, và visualizations.
+                        </p>
+                        <div class="timeline-details">
+                            <div class="detail-item">
+                                <span class="detail-label">File:</span>
+                                <code>Chat_bot.ipynb</code>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Features:</span>
+                                <span>Real-time, Batch, Viz</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Time:</span>
+                                <span class="time-badge">~10 phút</span>
+                            </div>
+                        </div>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Gradio</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">FastAPI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="section results-section" id="results">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">📈 Kết Quả</span>
+                <h2 class="section-title">Hiệu Suất Models</h2>
+                <p class="section-subtitle">
+                    So sánh chi tiết accuracy, F1-score và thời gian training
+                </p>
+            </div>
+
+            <!-- Model Comparison Chart -->
+            <div class="results-chart-container">
+                <div class="chart-header">
+                    <h3>So Sánh Accuracy</h3>
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="legend-color ml"></span>Machine Learning</span>
+                        <span class="legend-item"><span class="legend-color dl"></span>Deep Learning</span>
+                        <span class="legend-item"><span class="legend-color bert"></span>Transformer</span>
+                    </div>
+                </div>
+                <div class="chart-bars">
+                    <div class="bar-item highlight">
+                        <div class="bar-label">PhoBERT <span class="best-badge">BEST</span></div>
+                        <div class="bar-container">
+                            <div class="bar bert" style="width: 69%" data-value="69.0%">
+                                <span class="bar-value">69.0%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Logistic Regression</div>
+                        <div class="bar-container">
+                            <div class="bar ml" style="width: 63%" data-value="62.6%">
+                                <span class="bar-value">62.6%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Linear SVM</div>
+                        <div class="bar-container">
+                            <div class="bar ml" style="width: 61%" data-value="60.7%">
+                                <span class="bar-value">60.7%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">Naive Bayes</div>
+                        <div class="bar-container">
+                            <div class="bar ml" style="width: 60%" data-value="60.1%">
+                                <span class="bar-value">60.1%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bar-item">
+                        <div class="bar-label">BiLSTM</div>
+                        <div class="bar-container">
+                            <div class="bar dl" style="width: 60%" data-value="60.0%">
+                                <span class="bar-value">60.0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Metrics Table -->
+            <div class="metrics-table-container">
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Accuracy</th>
+                            <th>F1-Score</th>
+                            <th>Support</th>
+                            <th>Inference Speed</th>
+                            <th>Recommendation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="highlight-row">
+                            <td><strong>PhoBERT</strong></td>
+                            <td><strong>69.00%</strong></td>
+                            <td><strong>0.70</strong></td>
+                            <td>1640</td>
+                            <td><span class="speed-badge slow">⚡ Slow</span></td>
+                            <td>⭐⭐⭐ <strong>BEST</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Logistic Regression</strong></td>
+                            <td>62.62%</td>
+                            <td>0.63</td>
+                            <td>1640</td>
+                            <td><span class="speed-badge fast">⚡⚡⚡ Fast</span></td>
+                            <td>⭐ Good ML</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linear SVM</strong></td>
+                            <td>60.67%</td>
+                            <td>0.61</td>
+                            <td>1640</td>
+                            <td><span class="speed-badge medium">⚡⚡ Medium</span></td>
+                            <td>✅ Good Balance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Naive Bayes</strong></td>
+                            <td>60.06%</td>
+                            <td>0.60</td>
+                            <td>1640</td>
+                            <td><span class="speed-badge fast">⚡⚡⚡ Fast</span></td>
+                            <td>✅ Baseline</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BiLSTM</strong></td>
+                            <td>60.00%</td>
+                            <td>0.60</td>
+                            <td>1640</td>
+                            <td><span class="speed-badge slow">⚡ Slow</span></td>
+                            <td>⭐ Deep Learning</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Data Distribution -->
+            <div class="distribution-grid">
+                <div class="distribution-card">
+                    <h3>Phân Bố Sentiment</h3>
+                    <div class="distribution-chart">
+                        <div class="distribution-bar">
+                            <div class="dist-segment positive" style="width: 42.3%">
+                                <span class="dist-label">Tích cực<br>42.3%</span>
+                            </div>
+                            <div class="dist-segment neutral" style="width: 35.7%">
+                                <span class="dist-label">Bình thường<br>35.7%</span>
+                            </div>
+                            <div class="dist-segment negative" style="width: 22%">
+                                <span class="dist-label">Tiêu cực<br>22%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="distribution-stats">
+                        <div class="stat"><span class="dot positive"></span> 1,058 comments</div>
+                        <div class="stat"><span class="dot neutral"></span> 892 comments</div>
+                        <div class="stat"><span class="dot negative"></span> 550 comments</div>
+                    </div>
+                </div>
+
+                <div class="distribution-card">
+                    <h3>Phân Bố Aspect</h3>
+                    <div class="aspect-list">
+                        <div class="aspect-item">
+                            <div class="aspect-label">Diễn biến giá</div>
+                            <div class="aspect-bar">
+                                <div class="aspect-fill" style="width: 38.5%"></div>
+                            </div>
+                            <div class="aspect-value">38.5%</div>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-label">Kinh doanh</div>
+                            <div class="aspect-bar">
+                                <div class="aspect-fill" style="width: 22.1%"></div>
+                            </div>
+                            <div class="aspect-value">22.1%</div>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-label">Cảm xúc</div>
+                            <div class="aspect-bar">
+                                <div class="aspect-fill" style="width: 15.8%"></div>
+                            </div>
+                            <div class="aspect-value">15.8%</div>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-label">Chiến lược</div>
+                            <div class="aspect-bar">
+                                <div class="aspect-fill" style="width: 12.3%"></div>
+                            </div>
+                            <div class="aspect-value">12.3%</div>
+                        </div>
+                        <div class="aspect-item">
+                            <div class="aspect-label">Khác</div>
+                            <div class="aspect-bar">
+                                <div class="aspect-fill" style="width: 11.3%"></div>
+                            </div>
+                            <div class="aspect-value">11.3%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-section" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">🛠️ Công Nghệ</span>
+                <h2 class="section-title">Tech Stack</h2>
+                <p class="section-subtitle">
+                    Công nghệ và thư viện được sử dụng trong dự án
+                </p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">📊</span>
+                        Data Processing
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Pandas</span>
+                        <span class="tech-tag-item">NumPy</span>
+                        <span class="tech-tag-item">JSON</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🤖</span>
+                        Machine Learning
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Scikit-learn</span>
+                        <span class="tech-tag-item">XGBoost</span>
+                        <span class="tech-tag-item">LightGBM</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🧠</span>
+                        Deep Learning
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">TensorFlow</span>
+                        <span class="tech-tag-item">Keras</span>
+                        <span class="tech-tag-item">PyTorch</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">💬</span>
+                        NLP & Transformers
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Transformers</span>
+                        <span class="tech-tag-item">PhoBERT</span>
+                        <span class="tech-tag-item">Underthesea</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🎨</span>
+                        Visualization
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Matplotlib</span>
+                        <span class="tech-tag-item">Seaborn</span>
+                        <span class="tech-tag-item">Plotly</span>
+                    </div>
+                </div>
+                <div class="tech-category">
+                    <h3 class="tech-category-title">
+                        <span class="tech-icon">🚀</span>
+                        Deployment
+                    </h3>
+                    <div class="tech-tags">
+                        <span class="tech-tag-item">Gradio</span>
+                        <span class="tech-tag-item">Streamlit</span>
+                        <span class="tech-tag-item">FastAPI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="section demo-section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">💬 Demo</span>
+                <h2 class="section-title">Thử Nghiệm Chatbot</h2>
+                <p class="section-subtitle">
+                    Nhập bình luận về chứng khoán để xem kết quả phân tích sentiment
+                </p>
+            </div>
+            <div class="demo-container">
+                <div class="demo-input-section">
+                    <textarea id="demoInput" class="demo-textarea" placeholder="Nhập bình luận của bạn... 
+Ví dụ: 'VIC tăng trần 3 phiên liên tiếp, rất khả quan cho quý 3'"></textarea>
+                    <button id="analyzeBtn" class="btn btn-primary btn-large">
+                        <span>Phân Tích</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M5 10H15M15 10L10 5M15 10L10 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="demo-result" id="demoResult" style="display: none;">
+                    <div class="result-header">
+                        <h3>Kết Quả Phân Tích</h3>
+                    </div>
+                    <div class="result-content">
+                        <div class="result-item">
+                            <div class="result-label">Sentiment</div>
+                            <div class="result-value" id="sentimentValue"></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Confidence</div>
+                            <div class="result-value" id="confidenceValue"></div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Aspect</div>
+                            <div class="result-value" id="aspectValue"></div>
+                        </div>
+                    </div>
+                    <div class="result-probabilities">
+                        <h4>Phân Bố Xác Suất</h4>
+                        <div class="prob-bars">
+                            <div class="prob-item">
+                                <span class="prob-label">Tích cực</span>
+                                <div class="prob-bar">
+                                    <div class="prob-fill positive" id="probPositive"></div>
+                                </div>
+                                <span class="prob-value" id="probPositiveValue"></span>
+                            </div>
+                            <div class="prob-item">
+                                <span class="prob-label">Bình thường</span>
+                                <div class="prob-bar">
+                                    <div class="prob-fill neutral" id="probNeutral"></div>
+                                </div>
+                                <span class="prob-value" id="probNeutralValue"></span>
+                            </div>
+                            <div class="prob-item">
+                                <span class="prob-label">Tiêu cực</span>
+                                <div class="prob-bar">
+                                    <div class="prob-fill negative" id="probNegative"></div>
+                                </div>
+                                <span class="prob-value" id="probNegativeValue"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-examples">
+                    <h4>Ví dụ mẫu:</h4>
+                    <div class="example-chips">
+                        <button class="example-chip" data-text="VIC tăng trần 3 phiên liên tiếp, rất khả quan">
+                            VIC tăng trần 3 phiên...
+                        </button>
+                        <button class="example-chip" data-text="Báo cáo tài chính quý 3 rất tốt, lợi nhuận tăng 45%">
+                            Báo cáo tài chính tốt...
+                        </button>
+                        <button class="example-chip" data-text="Thị trường điều chỉnh mạnh, nên cắt lỗ">
+                            Thị trường điều chỉnh...
+                        </button>
+                        <button class="example-chip" data-text="VIC công bố kết quả kinh doanh quý 3">
+                            Công bố kết quả...
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vietnamese Stock Sentiment AI</h3>
+                    <p>Hệ thống phân tích cảm xúc thị trường chứng khoán Việt Nam</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Email</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Dự Án</h4>
+                    <ul class="footer-links">
+                        <li><a href="#overview">Tổng Quan</a></li>
+                        <li><a href="#workflow">Quy Trình</a></li>
+                        <li><a href="#results">Kết Quả</a></li>
+                        <li><a href="#tech">Công Nghệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tài Liệu</h4>
+                    <ul class="footer-links">
+                        <li><a href="../README.md">README</a></li>
+                        <li><a href="../PROJECT_WORKFLOW.md">Workflow</a></li>
+                        <li><a href="../requirements.txt">Requirements</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Thống Kê</h4>
+                    <div class="footer-stats">
+                        <div class="footer-stat">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Labeled Data</div>
+                        </div>
+                        <div class="footer-stat">
+                            <div class="stat-number">90%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vietnamese Stock Sentiment Analysis. Made with ❤️ for Vietnamese Stock Market.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
