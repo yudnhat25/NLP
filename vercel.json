@@ -1,26 +1,37 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "*.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.css",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "*.js",
-            "use": "@vercel/static"
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ],
-    "routes": [
+    "headers": [
         {
-            "handle": "filesystem"
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "Cache-Control",
+                    "value": "public, max-age=0, must-revalidate"
+                }
+            ]
         },
         {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "source": "/styles.css",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/css"
+                }
+            ]
+        },
+        {
+            "source": "/script.js",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "application/javascript"
+                }
+            ]
         }
     ]
 }
