@@ -381,34 +381,6 @@ max_length = 128  # thay vì 256
 
 ---
 
-## 🤝 Đóng Góp
-
-Contributions are welcome! Vui lòng:
-
-1. Fork repository
-2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Mở Pull Request
-
----
-
-## 📝 License
-
-Dự án này được phát hành dưới [MIT License](LICENSE).
-
----
-
-## 👥 Tác Giả
-
-**Dự án Cuối Kỳ - Phân Tích Cảm Xúc Chứng Khoán**
-
-- 📧 Email: your.email@example.com
-- 🌐 Website: your-website.com
-- 💼 LinkedIn: your-linkedin
-
----
-
 ## 🙏 Lời Cảm Ơn
 
 - [VinAI Research](https://www.vinai.io/) - PhoBERT model
@@ -448,21 +420,6 @@ Dự án này được phát hành dưới [MIT License](LICENSE).
 ## ⭐ Star History
 
 Nếu dự án này hữu ích, hãy cho một ⭐ để ủng hộ!
-
----
-
-## 📞 Liên Hệ & Hỗ Trợ
-
-Nếu bạn gặp vấn đề hoặc có câu hỏi:
-
-1. 🐛 **Bug Reports:** Mở [Issue](../../issues)
-2. 💡 **Feature Requests:** Mở [Discussion](../../discussions)
-3. 📧 **Email:** your.email@example.com
-4. 💬 **Discord/Slack:** [Join our community](#)
-
----
-
-<div align="center">
 
 **Made with ❤️ for Vietnamese Stock Market Analysis**
 
