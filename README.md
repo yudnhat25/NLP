@@ -425,22 +425,6 @@ Contributions are welcome! Vui lòng:
 
 ---
 
-## 📝 License
-
-Dự án này được phát hành dưới [MIT License](LICENSE).
-
----
-
-## 👥 Tác Giả
-
-**Dự án Cuối Kỳ - Phân Tích Cảm Xúc Chứng Khoán**
-
-- 📧 Email: your.email@example.com
-- 🌐 Website: your-website.com
-- 💼 LinkedIn: your-linkedin
-
----
-
 ## 🙏 Lời Cảm Ơn
 
 - [VinAI Research](https://www.vinai.io/) - PhoBERT model
@@ -474,25 +458,6 @@ Dự án này được phát hành dưới [MIT License](LICENSE).
 - 🔮 Risk assessment
 - 🔮 Mobile app
 - 🔮 Multi-language support
-
----
-
-## ⭐ Star History
-
-Nếu dự án này hữu ích, hãy cho một ⭐ để ủng hộ!
-
----
-
-## 📞 Liên Hệ & Hỗ Trợ
-
-Nếu bạn gặp vấn đề hoặc có câu hỏi:
-
-1. 🐛 **Bug Reports:** Mở [Issue](../../issues)
-2. 💡 **Feature Requests:** Mở [Discussion](../../discussions)
-3. 📧 **Email:** your.email@example.com
-4. 💬 **Discord/Slack:** [Join our community](#)
-
----
 
 <div align="center">
 
