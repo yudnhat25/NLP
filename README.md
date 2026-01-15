@@ -26,6 +26,39 @@ Dự án này xây dựng một hệ thống hoàn chỉnh để:
 
 Xem chi tiết quy trình tại: [PROJECT_WORKFLOW.md](PROJECT_WORKFLOW.md)
 
+### 🧩 System Workflow
+
+```mermaid
+graph TD
+    User([👤 User]) -->|Input Comment| UI[💻 Chatbot Interface]
+    UI -->|Send Text| System[⚙️ Sentiment Analysis System]
+    
+    subgraph "Processing Pipeline"
+        System -->|1. Preprocessing| Prep[🧹 Clean & Tokenize]
+        Prep -->|2. Feature Extraction| Feat[🔢 TF-IDF / Embeddings]
+        Feat -->|3. Model Prediction| AI[🤖 PhoBERT / ML Models]
+    end
+    
+    AI -->|Output| Result[📊 Sentiment Result]
+    Result -->|Display| UI
+    
+    Result -->|Details| D1[Positive/Neutral/Negative]
+    Result -->|Details| D2[Aspect Category]
+    Result -->|Details| D3[Confidence Score]
+```
+
+### 🔄 Data Pipeline
+
+```mermaid
+flowchart LR
+    A[📥 Raw Data] -->|Gemini AI| B[🏷️ Labeled Data]
+    B -->|Cleaning| C[🧹 Cleaned Data]
+    C -->|Split| D[Train/Test Sets]
+    D -->|Training| E[🏋️ Train Models]
+    E -->|Evaluation| F[📉 Metrics & Charts]
+    F -->|Deploy| G[🚀 Chatbot App]
+```
+
 ---
 
 ## 📁 Cấu Trúc Dự Án
@@ -381,6 +414,34 @@ max_length = 128  # thay vì 256
 
 ---
 
+## 🤝 Đóng Góp
+
+Contributions are welcome! Vui lòng:
+
+1. Fork repository
+2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Mở Pull Request
+
+---
+
+## 📝 License
+
+Dự án này được phát hành dưới [MIT License](LICENSE).
+
+---
+
+## 👥 Tác Giả
+
+**Dự án Cuối Kỳ - Phân Tích Cảm Xúc Chứng Khoán**
+
+- 📧 Email: your.email@example.com
+- 🌐 Website: your-website.com
+- 💼 LinkedIn: your-linkedin
+
+---
+
 ## 🙏 Lời Cảm Ơn
 
 - [VinAI Research](https://www.vinai.io/) - PhoBERT model
@@ -420,6 +481,21 @@ max_length = 128  # thay vì 256
 ## ⭐ Star History
 
 Nếu dự án này hữu ích, hãy cho một ⭐ để ủng hộ!
+
+---
+
+## 📞 Liên Hệ & Hỗ Trợ
+
+Nếu bạn gặp vấn đề hoặc có câu hỏi:
+
+1. 🐛 **Bug Reports:** Mở [Issue](../../issues)
+2. 💡 **Feature Requests:** Mở [Discussion](../../discussions)
+3. 📧 **Email:** your.email@example.com
+4. 💬 **Discord/Slack:** [Join our community](#)
+
+---
+
+<div align="center">
 
 **Made with ❤️ for Vietnamese Stock Market Analysis**
 
