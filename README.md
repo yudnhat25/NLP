@@ -43,8 +43,7 @@ graph TD
     Result -->|Display| UI
     
     Result -->|Details| D1[Positive/Neutral/Negative]
-    Result -->|Details| D2[Aspect Category]
-    Result -->|Details| D3[Confidence Score]
+    Result -->|Details| D2[Confidence Score]
 ```
 
 ### 🔄 Data Pipeline
